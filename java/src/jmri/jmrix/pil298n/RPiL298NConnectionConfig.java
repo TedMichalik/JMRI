@@ -41,7 +41,7 @@ public class RPiL298NConnectionConfig extends jmri.jmrix.AbstractConnectionConfi
      */
     public RPiL298NConnectionConfig() {
         super();
-        adapter = new RPi-L298NAdapter();
+        adapter = new RPiL298NAdapter();
     }
 
     protected boolean init = false;

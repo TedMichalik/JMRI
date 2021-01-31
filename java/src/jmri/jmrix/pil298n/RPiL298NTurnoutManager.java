@@ -23,13 +23,13 @@ public class RPiL298NTurnoutManager extends jmri.managers.AbstractTurnoutManager
      */
     @Override
     @Nonnull
-    public RPi-L298NSystemConnectionMemo getMemo() {
+    public RPiL298NSystemConnectionMemo getMemo() {
         return (RPiL298NSystemConnectionMemo) memo;
     }
 
     @Override
     public Turnout createNewTurnout(@Nonnull String systemName, String userName) {
-        Turnout t = new RPi-L298NTurnout(systemName, userName);
+        Turnout t = new RPiL298NTurnout(systemName, userName);
         return t;
     }
     

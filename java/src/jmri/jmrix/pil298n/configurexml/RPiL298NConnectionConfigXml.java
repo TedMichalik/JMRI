@@ -31,7 +31,7 @@ public class RPiL298NConnectionConfigXml extends AbstractConnectionConfigXml {
     protected void getInstance() {
         log.debug("getInstance without Parameter called");
         if (adapter == null) {
-            adapter = new RPi-L298NAdapter();
+            adapter = new RPiL298NAdapter();
             if (adapter.getGPIOController() == null) {
                 handleException("Not running on Raspberry PI.", null, adapter.getSystemPrefix(), adapter.getUserName(), null);
             }
