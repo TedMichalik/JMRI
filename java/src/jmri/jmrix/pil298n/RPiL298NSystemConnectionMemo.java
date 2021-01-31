@@ -26,12 +26,12 @@ public class RPiL298NSystemConnectionMemo extends DefaultSystemConnectionMemo im
     public RPiL298NSystemConnectionMemo(@Nonnull String prefix, @Nonnull String name) {
         super(prefix, name); // NOI18N
 
-        InstanceManager.store(this, RPi-L298NSystemConnectionMemo.class);
-        log.debug("Created RPi-L298NSystemConnectionMemo");
+        InstanceManager.store(this, RPiL298NSystemConnectionMemo.class);
+        log.debug("Created RPiL298NSystemConnectionMemo");
     }
 
     public RPiL298NSystemConnectionMemo(){
-        this("P", "RPi-L298N");
+        this("P", "RPiL298N");
     }
 
     /*
@@ -81,7 +81,7 @@ public class RPiL298NSystemConnectionMemo extends DefaultSystemConnectionMemo im
     
     @Override
     protected ResourceBundle getActionModelResourceBundle(){
-        return ResourceBundle.getBundle("jmri.jmrix.pil298n.RPi-L298NActionListBundle");
+        return ResourceBundle.getBundle("jmri.jmrix.pil298n.RPiL298NActionListBundle");
     }
 
     @Override
