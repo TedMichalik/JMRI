@@ -1,5 +1,4 @@
-
-package jmri.jmrix.pi-l298n;
+package jmri.jmrix.pil298n;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
@@ -16,49 +15,49 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Sensor interface for RPi-L298N GPIO pins.
+ * Sensor interface for RPiL298N GPIO pins.
  *
  * @author   Paul Bender Copyright (C) 2003-2017
  */
-public class RPi-L298NSensor extends AbstractSensor implements GpioPinListenerDigital {
+public class RPiL298NSensor extends AbstractSensor implements GpioPinListenerDigital {
 
     private static GpioController gpio = null;
     private GpioPinDigitalInput pin = null;
     private PinPullResistance pull = PinPullResistance.PULL_DOWN;
 
-    public RPi-L298NSensor(String systemName, String userName) {
+    public RPiL298NSensor(String systemName, String userName) {
         this(systemName, userName, GpioFactory.getInstance(), PinPullResistance.PULL_DOWN);
     }
 
-    public RPi-L298NSensor(String systemName, String userName, PinPullResistance p) {
+    public RPiL298NSensor(String systemName, String userName, PinPullResistance p) {
         this(systemName, userName, GpioFactory.getInstance(), p);
     }
 
-    public RPi-L298NSensor(String systemName) {
+    public RPiL298NSensor(String systemName) {
         this(systemName, GpioFactory.getInstance(), PinPullResistance.PULL_DOWN);
     }
 
-    public RPi-L298NSensor(String systemName, PinPullResistance p) {
+    public RPiL298NSensor(String systemName, PinPullResistance p) {
         this(systemName, GpioFactory.getInstance(), p);
     }
 
-    public RPi-L298NSensor(String systemName, String userName, GpioController _gpio) {
+    public RPiL298NSensor(String systemName, String userName, GpioController _gpio) {
         super(systemName, userName);
         // default pull is Pull Down
         init(systemName, _gpio, PinPullResistance.PULL_DOWN);
     }
 
-    public RPi-L298NSensor(String systemName, String userName, GpioController _gpio, PinPullResistance p) {
+    public RPiL298NSensor(String systemName, String userName, GpioController _gpio, PinPullResistance p) {
         super(systemName, userName);
         init(systemName, _gpio, p);
     }
 
-    public RPi-L298NSensor(String systemName, GpioController _gpio) {
+    public RPiL298NSensor(String systemName, GpioController _gpio) {
         super(systemName);
         init(systemName, _gpio, PinPullResistance.PULL_DOWN);
     }
 
-    public RPi-L298NSensor(String systemName, GpioController _gpio, PinPullResistance p) {
+    public RPiL298NSensor(String systemName, GpioController _gpio, PinPullResistance p) {
         super(systemName);
         init(systemName, _gpio, p);
     }
@@ -66,7 +65,7 @@ public class RPi-L298NSensor extends AbstractSensor implements GpioPinListenerDi
     /**
      * Common initialization for all constructors.
      * <p>
-     * Compare {@link RPi-L298NTurnout}
+     * Compare {@link RPiL298NTurnout}
      */
     private void init(String systemName, GpioController _gpio, PinPullResistance pRes){
         log.debug("Provisioning sensor {}", systemName);
@@ -179,6 +178,6 @@ public class RPi-L298NSensor extends AbstractSensor implements GpioPinListenerDi
        }
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RPi-L298NSensor.class);
+    private final static Logger log = LoggerFactory.getLogger(RPiL298NSensor.class);
 
 }

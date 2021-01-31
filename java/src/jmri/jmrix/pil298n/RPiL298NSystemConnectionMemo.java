@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n;
+package jmri.jmrix.pil298n;
 
 import java.util.Comparator;
 import java.util.ResourceBundle;
@@ -21,16 +21,16 @@ import org.slf4j.LoggerFactory;
  *
  * @author   Paul Bender Copyright (C) 2015
  */
-public class RPi-L298NSystemConnectionMemo extends DefaultSystemConnectionMemo implements ConfiguringSystemConnectionMemo {
+public class RPiL298NSystemConnectionMemo extends DefaultSystemConnectionMemo implements ConfiguringSystemConnectionMemo {
 
-    public RPi-L298NSystemConnectionMemo(@Nonnull String prefix, @Nonnull String name) {
+    public RPiL298NSystemConnectionMemo(@Nonnull String prefix, @Nonnull String name) {
         super(prefix, name); // NOI18N
 
         InstanceManager.store(this, RPi-L298NSystemConnectionMemo.class);
         log.debug("Created RPi-L298NSystemConnectionMemo");
     }
 
-    public RPi-L298NSystemConnectionMemo(){
+    public RPiL298NSystemConnectionMemo(){
         this("P", "RPi-L298N");
     }
 
@@ -74,14 +74,14 @@ public class RPi-L298NSystemConnectionMemo extends DefaultSystemConnectionMemo i
     }
 
     public void configureManagers(){
-       setTurnoutManager(new RPi-L298NTurnoutManager(this));
-       setSensorManager(new RPi-L298NSensorManager(this));
+       setTurnoutManager(new RPiL298NTurnoutManager(this));
+       setSensorManager(new RPiL298NSensorManager(this));
        register();
     }
     
     @Override
     protected ResourceBundle getActionModelResourceBundle(){
-        return ResourceBundle.getBundle("jmri.jmrix.pi-l298n.RPi-L298NActionListBundle");
+        return ResourceBundle.getBundle("jmri.jmrix.pil298n.RPi-L298NActionListBundle");
     }
 
     @Override
@@ -91,10 +91,10 @@ public class RPi-L298NSystemConnectionMemo extends DefaultSystemConnectionMemo i
 
     @Override
     public void dispose() {
-        InstanceManager.deregister(this, RPi-L298NSystemConnectionMemo.class);
+        InstanceManager.deregister(this, RPiL298NSystemConnectionMemo.class);
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RPi-L298NSystemConnectionMemo.class);
+    private final static Logger log = LoggerFactory.getLogger(RPiL298NSystemConnectionMemo.class);
 
 }

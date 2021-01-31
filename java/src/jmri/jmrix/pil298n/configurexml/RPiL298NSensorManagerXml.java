@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n.configurexml;
+package jmri.jmrix.pil298n.configurexml;
 
 import jmri.configurexml.JmriConfigureXmlException;
 import org.jdom2.Element;
@@ -7,22 +7,22 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Provides load and store functionality for
- * configuring RPi-L298NSensorManagers.
+ * configuring RPiL298NSensorManagers.
  * <p>
  * Uses the store method from the abstract base class, but
  * provides a load method here.
  *
  * @author  Paul Bender Copyright (c) 2003
  */
-public class RPi-L298NSensorManagerXml extends jmri.managers.configurexml.AbstractSensorManagerConfigXML {
+public class RPiL298NSensorManagerXml extends jmri.managers.configurexml.AbstractSensorManagerConfigXML {
 
-    public RPi-L298NSensorManagerXml() {
+    public RPiL298NSensorManagerXml() {
         super();
     }
 
     @Override
     public void setStoreElementClass(Element sensors) {
-        sensors.setAttribute("class", "jmri.jmrix.pi-l298n.configurexml.RPi-L298NSensorManagerXml");
+        sensors.setAttribute("class", "jmri.jmrix.pil298n.configurexml.RPiL298NSensorManagerXml");
     }
 
     @Override
@@ -36,6 +36,6 @@ public class RPi-L298NSensorManagerXml extends jmri.managers.configurexml.Abstra
         return loadSensors(shared);
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RPi-L298NSensorManagerXml.class);
+    private final static Logger log = LoggerFactory.getLogger(RPiL298NSensorManagerXml.class);
 
 }

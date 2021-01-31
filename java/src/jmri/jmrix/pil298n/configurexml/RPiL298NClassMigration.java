@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n.configurexml;
+package jmri.jmrix.pil298n.configurexml;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,12 +12,12 @@ import org.openide.util.lookup.ServiceProvider;
  * @author Randall Wood Copyright 2017
  */
 @ServiceProvider(service = ClassMigration.class)
-public class RPi-L298NClassMigration implements ClassMigration {
+public class RPiL298NClassMigration implements ClassMigration {
 
     @Override
     public Map<String, String> getMigrations() {
         Map<String, String> migrations = new HashMap<>();
-        migrations.put("jmri.jmrix.pi-l298n.configurexml.ConnectionConfigXml", "jmri.jmrix.pi-l298n.configurexml.RPi-L298NConnectionConfigXml");
+        migrations.put("jmri.jmrix.pil298n.configurexml.ConnectionConfigXml", "jmri.jmrix.pil298n.configurexml.RPiL298NConnectionConfigXml");
         return migrations;
     }
 

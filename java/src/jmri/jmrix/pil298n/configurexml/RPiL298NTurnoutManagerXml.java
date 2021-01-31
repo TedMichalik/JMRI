@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n.configurexml;
+package jmri.jmrix.pil298n.configurexml;
 
 import org.jdom2.Element;
 import org.slf4j.Logger;
@@ -6,22 +6,22 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Provides load and store functionality for
- * configuring RPi-L298NTurnoutManagers.
+ * configuring RPiL298NTurnoutManagers.
  * <p>
  * Uses the store method from the abstract base class, but
  * provides a load method here.
  *
  * @author Bob Jacobsen Copyright: Copyright (c) 2002
  */
-public class RPi-L298NTurnoutManagerXml extends jmri.managers.configurexml.AbstractTurnoutManagerConfigXML {
+public class RPiL298NTurnoutManagerXml extends jmri.managers.configurexml.AbstractTurnoutManagerConfigXML {
 
-    public RPi-L298NTurnoutManagerXml() {
+    public RPiL298NTurnoutManagerXml() {
         super();
     }
 
     @Override
     public void setStoreElementClass(Element turnouts) {
-        turnouts.setAttribute("class", "jmri.jmrix.pi-l298n.configurexml.RPi-L298NTurnoutManagerXml");
+        turnouts.setAttribute("class", "jmri.jmrix.pil298n.configurexml.RPiL298NTurnoutManagerXml");
     }
 
     @Override
@@ -30,6 +30,6 @@ public class RPi-L298NTurnoutManagerXml extends jmri.managers.configurexml.Abstr
         return loadTurnouts(shared, perNode);
     }
 
-//    private final static Logger log = LoggerFactory.getLogger(RPi-L298NTurnoutManagerXml.class);
+//    private final static Logger log = LoggerFactory.getLogger(RPiL298NTurnoutManagerXml.class);
 
 }

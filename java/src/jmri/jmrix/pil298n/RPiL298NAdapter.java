@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n;
+package jmri.jmrix.pil298n;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
@@ -8,22 +8,22 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Provides an Adapter to allow the system connection memo and multiple
- * RPi-L298N managers to be handled.
+ * RPiL298N managers to be handled.
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2002
  * @author Paul Bender Copyright (C) 2015
  */
-public class RPi-L298NAdapter extends jmri.jmrix.AbstractPortController {
+public class RPiL298NAdapter extends jmri.jmrix.AbstractPortController {
 
     // in theory gpio can be static, because there will only ever
     // be one, but the library handles the details that make it a
     // singleton.
     private GpioController gpio = null;
 
-    public RPi-L298NAdapter() {
-        super(new RPi-L298NSystemConnectionMemo());
-        log.debug("RPi-L298N GPIO Adapter Constructor called");
-        this.manufacturerName = RPi-L298NConnectionTypeList.PI;
+    public RPiL298NAdapter() {
+        super(new RPiL298NSystemConnectionMemo());
+        log.debug("RPiL298N GPIO Adapter Constructor called");
+        this.manufacturerName = RPiL298NConnectionTypeList.PI;
         try {
             gpio = GpioFactory.getInstance();
             opened = true;
@@ -63,8 +63,8 @@ public class RPi-L298NAdapter extends jmri.jmrix.AbstractPortController {
     }
 
     @Override
-    public RPi-L298NSystemConnectionMemo getSystemConnectionMemo() {
-        return (RPi-L298NSystemConnectionMemo) super.getSystemConnectionMemo();
+    public RPiL298NSystemConnectionMemo getSystemConnectionMemo() {
+        return (RPiL298NSystemConnectionMemo) super.getSystemConnectionMemo();
     }
 
     @Override
@@ -81,6 +81,6 @@ public class RPi-L298NAdapter extends jmri.jmrix.AbstractPortController {
         return gpio;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RPi-L298NAdapter.class);
+    private final static Logger log = LoggerFactory.getLogger(RPiL298NAdapter.class);
 
 }

@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n;
+package jmri.jmrix.pil298n;
 
 import javax.annotation.Nonnull;
 import jmri.Turnout;
@@ -11,10 +11,10 @@ import jmri.Turnout;
  *
  * @author   Paul Bender Copyright (C) 2015
  */
-public class RPi-L298NTurnoutManager extends jmri.managers.AbstractTurnoutManager {
+public class RPiL298NTurnoutManager extends jmri.managers.AbstractTurnoutManager {
 
     // ctor has to register for RPi-L298N events
-    public RPi-L298NTurnoutManager(RPi-L298NSystemConnectionMemo memo) {
+    public RPiL298NTurnoutManager(RPiL298NSystemConnectionMemo memo) {
         super(memo);
     }
 
@@ -24,7 +24,7 @@ public class RPi-L298NTurnoutManager extends jmri.managers.AbstractTurnoutManage
     @Override
     @Nonnull
     public RPi-L298NSystemConnectionMemo getMemo() {
-        return (RPi-L298NSystemConnectionMemo) memo;
+        return (RPiL298NSystemConnectionMemo) memo;
     }
 
     @Override

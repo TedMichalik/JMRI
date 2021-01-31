@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n;
+package jmri.jmrix.pil298n;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Locale;
@@ -24,7 +24,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class Bundle extends jmri.jmrix.Bundle {
 
     @CheckForNull
-    private static final String name = "jmri.jmrix.pi-l298n.Bundle"; // NOI18N
+    private static final String name = "jmri.jmrix.pil298n.Bundle"; // NOI18N
 
     //
     // below here is boilerplate to be copied exactly

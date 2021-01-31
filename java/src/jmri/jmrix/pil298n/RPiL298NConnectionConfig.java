@@ -1,4 +1,4 @@
-package jmri.jmrix.pi-l298n;
+package jmri.jmrix.pil298n;
 
 import java.awt.GraphicsEnvironment;
 import java.awt.event.ActionEvent;
@@ -12,16 +12,16 @@ import org.slf4j.LoggerFactory;
 /**
  * Handle configuring a Raspberry Pi layout connection.
  * <p>
- * This uses the {@link RPi-L298NAdapter} class to do the actual connection.
+ * This uses the {@link RPiL298NAdapter} class to do the actual connection.
  *
  * @author Paul Bender Copyright (C) 2015
  *
- * @see RPi-L298NAdapter
+ * @see RPiL298NAdapter
  */
-public class RPi-L298NConnectionConfig extends jmri.jmrix.AbstractConnectionConfig {
+public class RPiL298NConnectionConfig extends jmri.jmrix.AbstractConnectionConfig {
 
     private boolean disabled = false;
-    private RPi-L298NAdapter adapter = null;
+    private RPiL298NAdapter adapter = null;
     private Date GPIOMessageShown = null;
 
     /**
@@ -30,7 +30,7 @@ public class RPi-L298NConnectionConfig extends jmri.jmrix.AbstractConnectionConf
      *
      * @param p the pre-existing adapter
      */
-    public RPi-L298NConnectionConfig(RPi-L298NAdapter p) {
+    public RPiL298NConnectionConfig(RPiL298NAdapter p) {
         super();
         adapter = p;
     }
@@ -39,7 +39,7 @@ public class RPi-L298NConnectionConfig extends jmri.jmrix.AbstractConnectionConf
      * Ctor for a connection configuration with no preexisting adapter.
      * {@link #setInstance()} will fill the adapter member.
      */
-    public RPi-L298NConnectionConfig() {
+    public RPiL298NConnectionConfig() {
         super();
         adapter = new RPi-L298NAdapter();
     }
@@ -96,7 +96,7 @@ public class RPi-L298NConnectionConfig extends jmri.jmrix.AbstractConnectionConf
     @Override
     protected void setInstance() {
         if (adapter == null) {
-            adapter = new RPi-L298NAdapter();
+            adapter = new RPiL298NAdapter();
         }
         if (adapter.getGPIOController() == null) {
             // don't show more than once every 30 seconds
@@ -112,7 +112,7 @@ public class RPi-L298NConnectionConfig extends jmri.jmrix.AbstractConnectionConf
     }
 
     @Override
-    public RPi-L298NAdapter getAdapter() {
+    public RPiL298NAdapter getAdapter() {
         return adapter;
     }
 
@@ -121,7 +121,7 @@ public class RPi-L298NConnectionConfig extends jmri.jmrix.AbstractConnectionConf
         return "GPIO";
     }
 
-    String manuf = RPi-L298NConnectionTypeList.PI;
+    String manuf = RPiL298NConnectionTypeList.PI;
 
     @Override
     public String getManufacturer() {
@@ -153,6 +153,6 @@ public class RPi-L298NConnectionConfig extends jmri.jmrix.AbstractConnectionConf
         this.disabled = disable;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RPi-L298NConnectionConfig.class);
+    private final static Logger log = LoggerFactory.getLogger(RPiL298NConnectionConfig.class);
 
 }

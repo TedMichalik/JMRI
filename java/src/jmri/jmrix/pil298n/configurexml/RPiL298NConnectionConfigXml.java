@@ -1,17 +1,17 @@
-package jmri.jmrix.pi-l298n.configurexml;
+package jmri.jmrix.pil298n.configurexml;
 
 import jmri.jmrix.configurexml.AbstractConnectionConfigXml;
-import jmri.jmrix.pi-l298n.RPi-L298NAdapter;
-import jmri.jmrix.pi-l298n.RPi-L298NConnectionConfig;
+import jmri.jmrix.pil298n.RPiL298NAdapter;
+import jmri.jmrix.pil298n.RPiL298NConnectionConfig;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Handle XML persistence of layout connections by persisting the
- * RPi-L298NAdapter. Note this is named as the XML version of a
- * RPi-L298NConnectionConfig object, but it's actually persisting the
- * RPi-L298NAdapter.
+ * RPiL298NAdapter. Note this is named as the XML version of a
+ * RPiL298NConnectionConfig object, but it's actually persisting the
+ * RPiL298NAdapter.
  * <p>
  * This class is invoked from jmrix.JmrixConfigPaneXml on write, as that class
  * is the one actually registered. Reads are brought here directly via the class
@@ -19,11 +19,11 @@ import org.slf4j.LoggerFactory;
  *
  * @author Paul Bender Copyright: Copyright (c) 2015
  */
-public class RPi-L298NConnectionConfigXml extends AbstractConnectionConfigXml {
+public class RPiL298NConnectionConfigXml extends AbstractConnectionConfigXml {
 
-    private RPi-L298NAdapter adapter = null;
+    private RPiL298NAdapter adapter = null;
 
-    public RPi-L298NConnectionConfigXml() {
+    public RPiL298NConnectionConfigXml() {
         super();
     }
 
@@ -40,12 +40,12 @@ public class RPi-L298NConnectionConfigXml extends AbstractConnectionConfigXml {
 
     protected void getInstance(Object object) {
         log.debug("getInstance with Parameter called");
-        adapter = ((RPi-L298NConnectionConfig) object).getAdapter();
+        adapter = ((RPiL298NConnectionConfig) object).getAdapter();
     }
 
     @Override
     protected void register() {
-        this.register(new RPi-L298NConnectionConfig(adapter));
+        this.register(new RPiL298NConnectionConfig(adapter));
     }
 
     /**
@@ -76,6 +76,6 @@ public class RPi-L298NConnectionConfigXml extends AbstractConnectionConfigXml {
         return true;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RPi-L298NConnectionConfigXml.class);
+    private final static Logger log = LoggerFactory.getLogger(RPiL298NConnectionConfigXml.class);
 
 }
