@@ -1,4 +1,4 @@
-package jmri.jmrix.pi;
+package jmri.jmrix.pi-l298n;
 
 import jmri.jmrix.ConnectionTypeList;
 import org.openide.util.lookup.ServiceProvider;
@@ -10,14 +10,14 @@ import org.openide.util.lookup.ServiceProvider;
   *
  */
 @ServiceProvider(service = ConnectionTypeList.class)
-public class RaspberryPiConnectionTypeList implements jmri.jmrix.ConnectionTypeList {
+public class RPi-L298NConnectionTypeList implements jmri.jmrix.ConnectionTypeList {
 
     public static final String PI = "Raspberry Pi Foundation";
 
     @Override
     public String[] getAvailableProtocolClasses() {
         return new String[]{
-            "jmri.jmrix.pi.RaspberryPiConnectionConfig"
+            "jmri.jmrix.pi-l298n.RPi-L298NConnectionConfig"
         };
     }
 

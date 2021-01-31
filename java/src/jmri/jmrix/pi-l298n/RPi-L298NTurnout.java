@@ -1,4 +1,4 @@
-package jmri.jmrix.pi;
+package jmri.jmrix.pi-l298n;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
@@ -12,11 +12,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Turnout interface to RaspberryPi GPIO pins.
+ * Turnout interface to RPi-L298N GPIO pins.
  *
  * @author Paul Bender Copyright (C) 2015 
  */
-public class RaspberryPiTurnout extends AbstractTurnout implements java.io.Serializable {
+public class RPi-L298NTurnout extends AbstractTurnout implements java.io.Serializable {
 
     // in theory gpio can be static (as in PiSensor) because there will only ever
     // be one, but the library handles the details that make it a 
@@ -24,21 +24,21 @@ public class RaspberryPiTurnout extends AbstractTurnout implements java.io.Seria
    private GpioController gpio = null;
    private GpioPinDigitalOutput pin = null;
 
-   public RaspberryPiTurnout(String systemName) {
+   public RPi-L298NTurnout(String systemName) {
         this(systemName, GpioFactory.getInstance());
    }
 
-   public RaspberryPiTurnout(String systemName, String userName) {
+   public RPi-L298NTurnout(String systemName, String userName) {
         this(systemName, userName, GpioFactory.getInstance());
    }
 
-   public RaspberryPiTurnout(String systemName, GpioController _gpio) {
+   public RPi-L298NTurnout(String systemName, GpioController _gpio) {
         super(systemName);
         log.trace("Provisioning turnout '{}'", systemName);
         init(systemName, _gpio);
    }
 
-   public RaspberryPiTurnout(String systemName, String userName, GpioController _gpio) {
+   public RPi-L298NTurnout(String systemName, String userName, GpioController _gpio) {
         super(systemName, userName);
         log.trace("Provisioning turnout '{}' with username '{}'", systemName, userName);
         init(systemName, _gpio);
@@ -47,7 +47,7 @@ public class RaspberryPiTurnout extends AbstractTurnout implements java.io.Seria
    /**
     * Common initialization for all constructors.
     * <p>
-    * Compare {@link RaspberryPiSensor}
+    * Compare {@link RPi-L298NPiSensor}
     */
    private void init(String systemName, GpioController _gpio) {
        log.debug("Provisioning turnout {}", systemName);
@@ -122,6 +122,6 @@ public class RaspberryPiTurnout extends AbstractTurnout implements java.io.Seria
    protected void turnoutPushbuttonLockout(boolean locked){
    }
 
-    private final static Logger log = LoggerFactory.getLogger(RaspberryPiTurnout.class);
+    private final static Logger log = LoggerFactory.getLogger(RPi-L298NTurnout.class);
 
 }

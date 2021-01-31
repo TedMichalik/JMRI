@@ -1,20 +1,20 @@
-package jmri.jmrix.pi;
+package jmri.jmrix.pi-l298n;
 
 import javax.annotation.Nonnull;
 import jmri.Sensor;
 
 /**
- * Manage the RaspberryPi specific Sensor implementation.
+ * Manage the RPi-L298N specific Sensor implementation.
  *
  * System names are "PSnnn", where P is the user configurable system prefix,
  * nnn is the sensor number without padding.
  *
  * @author   Paul Bender Copyright (C) 2015
  */
-public class RaspberryPiSensorManager extends jmri.managers.AbstractSensorManager {
+public class RPi-L298NSensorManager extends jmri.managers.AbstractSensorManager {
 
-    // ctor has to register for RaspberryPi events
-    public RaspberryPiSensorManager(RaspberryPiSystemConnectionMemo memo) {
+    // ctor has to register for RPi-L298N events
+    public RPi-L298NSensorManager(RPi-L298NSystemConnectionMemo memo) {
         super(memo);
     }
 
@@ -23,8 +23,8 @@ public class RaspberryPiSensorManager extends jmri.managers.AbstractSensorManage
      */
     @Override
     @Nonnull
-    public RaspberryPiSystemConnectionMemo getMemo() {
-        return (RaspberryPiSystemConnectionMemo) memo;
+    public RPi-L298NSystemConnectionMemo getMemo() {
+        return (RPi-L298NSystemConnectionMemo) memo;
     }
 
     /**
@@ -33,7 +33,7 @@ public class RaspberryPiSensorManager extends jmri.managers.AbstractSensorManage
     @Override
     @Nonnull
     public Sensor createNewSensor(@Nonnull String systemName, String userName) {
-        return new RaspberryPiSensor(systemName, userName);
+        return new RPi-L298NSensor(systemName, userName);
     }
 
     /**

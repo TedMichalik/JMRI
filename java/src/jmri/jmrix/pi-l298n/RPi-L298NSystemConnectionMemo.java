@@ -1,4 +1,4 @@
-package jmri.jmrix.pi;
+package jmri.jmrix.pi-l298n;
 
 import java.util.Comparator;
 import java.util.ResourceBundle;
@@ -21,17 +21,17 @@ import org.slf4j.LoggerFactory;
  *
  * @author   Paul Bender Copyright (C) 2015
  */
-public class RaspberryPiSystemConnectionMemo extends DefaultSystemConnectionMemo implements ConfiguringSystemConnectionMemo {
+public class RPi-L298NSystemConnectionMemo extends DefaultSystemConnectionMemo implements ConfiguringSystemConnectionMemo {
 
-    public RaspberryPiSystemConnectionMemo(@Nonnull String prefix, @Nonnull String name) {
+    public RPi-L298NSystemConnectionMemo(@Nonnull String prefix, @Nonnull String name) {
         super(prefix, name); // NOI18N
 
-        InstanceManager.store(this, RaspberryPiSystemConnectionMemo.class);
-        log.debug("Created RaspberryPiSystemConnectionMemo");
+        InstanceManager.store(this, RPi-L298NSystemConnectionMemo.class);
+        log.debug("Created RPi-L298NSystemConnectionMemo");
     }
 
-    public RaspberryPiSystemConnectionMemo(){
-        this("P", "RaspberryPi");
+    public RPi-L298NSystemConnectionMemo(){
+        this("P", "RPi-L298N");
     }
 
     /*
@@ -74,14 +74,14 @@ public class RaspberryPiSystemConnectionMemo extends DefaultSystemConnectionMemo
     }
 
     public void configureManagers(){
-       setTurnoutManager(new RaspberryPiTurnoutManager(this));
-       setSensorManager(new RaspberryPiSensorManager(this));
+       setTurnoutManager(new RPi-L298NTurnoutManager(this));
+       setSensorManager(new RPi-L298NSensorManager(this));
        register();
     }
     
     @Override
     protected ResourceBundle getActionModelResourceBundle(){
-        return ResourceBundle.getBundle("jmri.jmrix.pi.RaspberryPiActionListBundle");
+        return ResourceBundle.getBundle("jmri.jmrix.pi-l298n.RPi-L298NActionListBundle");
     }
 
     @Override
@@ -91,10 +91,10 @@ public class RaspberryPiSystemConnectionMemo extends DefaultSystemConnectionMemo
 
     @Override
     public void dispose() {
-        InstanceManager.deregister(this, RaspberryPiSystemConnectionMemo.class);
+        InstanceManager.deregister(this, RPi-L298NSystemConnectionMemo.class);
         super.dispose();
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RaspberryPiSystemConnectionMemo.class);
+    private final static Logger log = LoggerFactory.getLogger(RPi-L298NSystemConnectionMemo.class);
 
 }

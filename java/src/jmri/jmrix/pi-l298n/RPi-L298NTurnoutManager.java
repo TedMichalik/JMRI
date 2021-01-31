@@ -1,4 +1,4 @@
-package jmri.jmrix.pi;
+package jmri.jmrix.pi-l298n;
 
 import javax.annotation.Nonnull;
 import jmri.Turnout;
@@ -11,10 +11,10 @@ import jmri.Turnout;
  *
  * @author   Paul Bender Copyright (C) 2015
  */
-public class RaspberryPiTurnoutManager extends jmri.managers.AbstractTurnoutManager {
+public class RPi-L298NTurnoutManager extends jmri.managers.AbstractTurnoutManager {
 
-    // ctor has to register for RaspberryPi events
-    public RaspberryPiTurnoutManager(RaspberryPiSystemConnectionMemo memo) {
+    // ctor has to register for RPi-L298N events
+    public RPi-L298NTurnoutManager(RPi-L298NSystemConnectionMemo memo) {
         super(memo);
     }
 
@@ -23,13 +23,13 @@ public class RaspberryPiTurnoutManager extends jmri.managers.AbstractTurnoutMana
      */
     @Override
     @Nonnull
-    public RaspberryPiSystemConnectionMemo getMemo() {
-        return (RaspberryPiSystemConnectionMemo) memo;
+    public RPi-L298NSystemConnectionMemo getMemo() {
+        return (RPi-L298NSystemConnectionMemo) memo;
     }
 
     @Override
     public Turnout createNewTurnout(@Nonnull String systemName, String userName) {
-        Turnout t = new RaspberryPiTurnout(systemName, userName);
+        Turnout t = new RPi-L298NTurnout(systemName, userName);
         return t;
     }
     

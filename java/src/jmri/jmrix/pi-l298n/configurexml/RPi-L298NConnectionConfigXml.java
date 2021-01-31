@@ -1,17 +1,17 @@
-package jmri.jmrix.pi.configurexml;
+package jmri.jmrix.pi-l298n.configurexml;
 
 import jmri.jmrix.configurexml.AbstractConnectionConfigXml;
-import jmri.jmrix.pi.RaspberryPiAdapter;
-import jmri.jmrix.pi.RaspberryPiConnectionConfig;
+import jmri.jmrix.pi-l298n.RPi-L298NAdapter;
+import jmri.jmrix.pi-l298n.RPi-L298NConnectionConfig;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Handle XML persistence of layout connections by persisting the
- * RaspberryPiAdapter. Note this is named as the XML version of a
- * RaspberryPiConnectionConfig object, but it's actually persisting the
- * RaspberryPiAdapter.
+ * RPi-L298NAdapter. Note this is named as the XML version of a
+ * RPi-L298NConnectionConfig object, but it's actually persisting the
+ * RPi-L298NAdapter.
  * <p>
  * This class is invoked from jmrix.JmrixConfigPaneXml on write, as that class
  * is the one actually registered. Reads are brought here directly via the class
@@ -19,11 +19,11 @@ import org.slf4j.LoggerFactory;
  *
  * @author Paul Bender Copyright: Copyright (c) 2015
  */
-public class RaspberryPiConnectionConfigXml extends AbstractConnectionConfigXml {
+public class RPi-L298NConnectionConfigXml extends AbstractConnectionConfigXml {
 
-    private RaspberryPiAdapter adapter = null;
+    private RPi-L298NAdapter adapter = null;
 
-    public RaspberryPiConnectionConfigXml() {
+    public RPi-L298NConnectionConfigXml() {
         super();
     }
 
@@ -31,7 +31,7 @@ public class RaspberryPiConnectionConfigXml extends AbstractConnectionConfigXml 
     protected void getInstance() {
         log.debug("getInstance without Parameter called");
         if (adapter == null) {
-            adapter = new RaspberryPiAdapter();
+            adapter = new RPi-L298NAdapter();
             if (adapter.getGPIOController() == null) {
                 handleException("Not running on Raspberry PI.", null, adapter.getSystemPrefix(), adapter.getUserName(), null);
             }
@@ -40,12 +40,12 @@ public class RaspberryPiConnectionConfigXml extends AbstractConnectionConfigXml 
 
     protected void getInstance(Object object) {
         log.debug("getInstance with Parameter called");
-        adapter = ((RaspberryPiConnectionConfig) object).getAdapter();
+        adapter = ((RPi-L298NConnectionConfig) object).getAdapter();
     }
 
     @Override
     protected void register() {
-        this.register(new RaspberryPiConnectionConfig(adapter));
+        this.register(new RPi-L298NConnectionConfig(adapter));
     }
 
     /**
@@ -76,6 +76,6 @@ public class RaspberryPiConnectionConfigXml extends AbstractConnectionConfigXml 
         return true;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RaspberryPiConnectionConfigXml.class);
+    private final static Logger log = LoggerFactory.getLogger(RPi-L298NConnectionConfigXml.class);
 
 }

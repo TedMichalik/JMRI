@@ -1,4 +1,4 @@
-package jmri.jmrix.pi;
+package jmri.jmrix.pi-l298n;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
@@ -8,22 +8,22 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Provides an Adapter to allow the system connection memo and multiple
- * RaspberryPi managers to be handled.
+ * RPi-L298N managers to be handled.
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2002
  * @author Paul Bender Copyright (C) 2015
  */
-public class RaspberryPiAdapter extends jmri.jmrix.AbstractPortController {
+public class RPi-L298NAdapter extends jmri.jmrix.AbstractPortController {
 
     // in theory gpio can be static, because there will only ever
     // be one, but the library handles the details that make it a
     // singleton.
     private GpioController gpio = null;
 
-    public RaspberryPiAdapter() {
-        super(new RaspberryPiSystemConnectionMemo());
-        log.debug("RaspberryPi GPIO Adapter Constructor called");
-        this.manufacturerName = RaspberryPiConnectionTypeList.PI;
+    public RPi-L298NAdapter() {
+        super(new RPi-L298NSystemConnectionMemo());
+        log.debug("RPi-L298N GPIO Adapter Constructor called");
+        this.manufacturerName = RPi-L298NConnectionTypeList.PI;
         try {
             gpio = GpioFactory.getInstance();
             opened = true;
@@ -63,8 +63,8 @@ public class RaspberryPiAdapter extends jmri.jmrix.AbstractPortController {
     }
 
     @Override
-    public RaspberryPiSystemConnectionMemo getSystemConnectionMemo() {
-        return (RaspberryPiSystemConnectionMemo) super.getSystemConnectionMemo();
+    public RPi-L298NSystemConnectionMemo getSystemConnectionMemo() {
+        return (RPi-L298NSystemConnectionMemo) super.getSystemConnectionMemo();
     }
 
     @Override
@@ -81,6 +81,6 @@ public class RaspberryPiAdapter extends jmri.jmrix.AbstractPortController {
         return gpio;
     }
 
-    private final static Logger log = LoggerFactory.getLogger(RaspberryPiAdapter.class);
+    private final static Logger log = LoggerFactory.getLogger(RPi-L298NAdapter.class);
 
 }
